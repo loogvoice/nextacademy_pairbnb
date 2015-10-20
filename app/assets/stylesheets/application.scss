@@ -23,6 +23,10 @@ $font-size-large: 70px;
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -57,8 +61,15 @@ body {
 }
 
 .container {
+  min-height: 100%;
   margin: 20px;
   padding: 20px;
+  margin-bottom: -3em;
+}
+
+.container:after {
+  content: "";
+  display: block;
 }
 
 /*----- Para -----*/
@@ -80,10 +91,10 @@ body {
 }
  
 /*----- Menu -----*/
-  .menu {
-    width:100%;
-    background:#ff5a5f;
-  }
+.menu {
+  width:100%;
+  background:#ff5a5f;
+}
 
 .menu ul {
   display:inline-block;
@@ -143,22 +154,27 @@ body {
   color:#303030;
 }
 
+#footer, .container:after {
+  height: 3em;
+}
+
 #footer {
   clear: both;
-  position: relative;
+  /*position: relative;*/
   z-index: 10;
-  height: 3em;
-  margin-top: -3em;
+  /*margin-top: -3em;*/
   background-color: black;
   color: white;
   padding: 10px;
-  margin: auto;
+  /*margin: auto;*/
   ul {
     li {
       float: left;
       margin-right: 20px;
       list-style: none;
-      display: inline;
+    }
+    .truncate {
+      display: none;
     }
   }
 }
@@ -174,6 +190,10 @@ body {
 
   .para-one, .para-two {
     width: 50%;
+  }
+
+  #footer ul .truncate {
+    display: list-item;
   }
 }
 
